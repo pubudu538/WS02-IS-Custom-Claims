@@ -40,6 +40,7 @@ public class IDTokenCustomClaims  implements CustomClaimsCallbackHandler {
             int tenantId = realmService.getTenantManager().getTenantId(tenantDomain);
             userStoreManager = realmService.getTenantUserRealm(tenantId).getUserStoreManager();
 
+            // Get relevant values for the claim
             email = userStoreManager.getUserClaimValue(userName, emailClaim, null);
             role = userStoreManager.getUserClaimValue(userName, roleClaim, null);
 
@@ -49,9 +50,10 @@ public class IDTokenCustomClaims  implements CustomClaimsCallbackHandler {
 
         log.info("Email - " + email);
         log.info("Username - " + userName);
-        log.info("TenantDOm - " + tenantDomain);
+        log.info("Tenant Domain - " + tenantDomain);
         log.info("Role - "+role);
 
+        // Add claims to the ID token
         builder.setClaim(emailClaim, email);
         builder.setClaim(roleClaim, role);
 
