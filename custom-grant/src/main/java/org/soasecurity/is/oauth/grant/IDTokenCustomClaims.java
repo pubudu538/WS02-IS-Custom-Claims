@@ -14,6 +14,7 @@ import org.wso2.carbon.identity.oauth2.token.OAuthTokenReqMessageContext;
 import org.wso2.carbon.identity.oauth.internal.OAuthComponentServiceHolder;
 
 /**
+ * This is only applicable for WSO2 IS 5.0.0
  * Change the class name as follows in <IS_HOME>/repository/conf/identity.xml
  * Copy the jar file to <IS_HOME>/repository/components/lib
  * <IDTokenCustomClaimsCallBackHandler>org.soasecurity.is.oauth.grant.IDTokenCustomClaims</IDTokenCustomClaimsCallBackHandler>
